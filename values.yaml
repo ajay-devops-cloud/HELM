@@ -1,27 +1,27 @@
 common:
-  containerRegistryURL: devopsinsidersacr235.azurecr.io
+  containerRegistryURL: rk8sacr.azurecr.io
   ingressClass: azure-application-gateway
   
 ui:
   replicas: 2
   image:
     name: todo-ui
-    tag: v4
+    tag: v1
   port: 80
   ServicePort: 80
   ingress:
-    host: ui.jhandu.shop
+    host: dev-ui.ajay-azuredevops.shop
 
 getTask:
   replicas: 2
   image:
-    name: todo-get-tasks-api
+    name: todo-get-task
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:devdas-sql-server.database.windows.net,1433;Database=dev-01-sqldb;Uid=devops123;Pwd=Devops@1@3#5;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: get-tasks-api.jhandu.shop
+    host: dev-get-tasks-api.ajay-azuredevops.shop
     ingressClass: azure-application-gateway
 
 deleteTask:
@@ -31,9 +31,9 @@ deleteTask:
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:devdas-sql-server.database.windows.net,1433;Database=dev-01-sqldb;Uid=devops123;Pwd=Devops@1@3#5;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: delete-task-api.jhandu.shop
+    host: dev-delete-task-api.ajay-azuredevops.shop
     ingressClass: azure-application-gateway
 
 addTask:
@@ -43,7 +43,7 @@ addTask:
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:devdas-sql-server.database.windows.net,1433;Database=dev-01-sqldb;Uid=devops123;Pwd=Devops@1@3#5;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: add-task-api.jhandu.shop
-    ingressClass: nginx
+    host: dev-add-task-api.ajay-azuredevops.shop
+    ingressClass: azure-application-gateway
