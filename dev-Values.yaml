@@ -6,7 +6,7 @@ common:
 ui:
   replicas: 2
   image:
-    name: rk8sacr.azurecr.io/todo-ui:v1
+    name: rk8sacr.azurecr.io/todo-ui
     tag: v1
   port: 80
   ServicePort: 80
@@ -16,7 +16,7 @@ ui:
 getTask:
   replicas: 2
   image:
-    name: rk8sacr.azurecr.io/todo-get-tasks-api:v1
+    name: rk8sacr.azurecr.io/todo-get-tasks-api
     tag: v1
   port: 8000
   ServicePort: 80
@@ -29,7 +29,7 @@ getTask:
 deleteTask:
   replicas: 2
   image:
-    name: rk8sacr.azurecr.io/todo-delete-tasks-api:v1
+    name: rk8sacr.azurecr.io/todo-delete-tasks-api
     tag: v1
   port: 8000
   ServicePort: 80
@@ -42,7 +42,7 @@ deleteTask:
 addTask:
   replicas: 2
   image:
-    name: rk8sacr.azurecr.io/todo-add-tasks-api:v1
+    name: rk8sacr.azurecr.io/todo-add-tasks-api
     tag: v1
   port: 8000
   ServicePort: 80
