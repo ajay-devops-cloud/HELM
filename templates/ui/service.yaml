@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
-metadata: 
-  name: {{ .Release.Name}}-svc
-spec: 
+metadata:
+  name: {{ .Release.Name }}-todo-ui-svc
+spec:
+  type: ClusterIP
   selector:
-    app: {{ .Release.Name }}-nginx
+    app: {{ .Release.Name }}-todo-ui
   ports:
-    - port: {{ .Values.ServicePort}}  
-      targetPort: {{ .Values.port}}
-  type: ClusterIP  
+    - port: {{ .Values.ui.ServicePort }}
+      targetPort: {{ .Values.ui.port }} 
